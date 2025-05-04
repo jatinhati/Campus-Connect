@@ -1,7 +1,9 @@
 Campus Connect
+
 Campus Connect is a web application designed to enhance communication and collaboration within educational institutions. It serves as a centralized platform for students, faculty, and administrative staff to share announcements, organize events, and foster community engagement.
 
 🚀 Features
+
 Announcements: Post and view important updates from faculty and administration.
 
 Event Management: Create, manage, and RSVP to campus events.
@@ -106,8 +108,6 @@ Edit
 git push origin feature/YourFeatureName
 Open a Pull Request.
 
-📄 License
-This project is licensed under the MIT License.
 
 📬 Contact
 For any inquiries or feedback, please reach out to Jatin Hati.
