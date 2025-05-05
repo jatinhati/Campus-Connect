@@ -27,8 +27,7 @@ A **social networking platform** designed exclusively for college students to co
 ## **Installation & Setup 🛠️**  
 
 ### **Prerequisites**  
-- Node.js (v16+)  
-- MongoDB Atlas (or local instance)  
+- Node.js (v16+)    
 - Git  
 
 ### **Steps**  
@@ -36,3 +35,8 @@ A **social networking platform** designed exclusively for college students to co
    ```bash
    git clone https://github.com/jatinhati/Campus-Connect.git
    cd Campus-Connect
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
