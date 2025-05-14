@@ -1,4 +1,6 @@
-# Campus Connect 🏫🔗  
+# Campus Connect 🏫🔗 
+
+**LIVE LINK:**https://campus-connect-mu.vercel.app/
 
 
 A **social networking platform** designed exclusively for college students to connect, collaborate, and engage in campus activities.  
