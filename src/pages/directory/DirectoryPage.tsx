@@ -144,18 +144,22 @@ function DirectoryPage() {
   const filteredColleges = collegeData.filter(college => {
     return (
       (location === 'all' || college.location === location) &&
-      (college.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-       college.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-       college.type.toLowerCase().includes(searchQuery.toLowerCase()))
+      (
+        college.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        college.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        college.type.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     );
   });
   
   const filteredClubs = clubData.filter(club => {
     return (
       (location === 'all' || club.location === location) &&
-      (club.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-       club.college.toLowerCase().includes(searchQuery.toLowerCase()) ||
-       club.category.toLowerCase().includes(searchQuery.toLowerCase()))
+      (
+        club.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        club.college.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        club.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     );
   });
 

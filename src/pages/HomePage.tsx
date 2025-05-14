@@ -14,12 +14,9 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate API loading
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setIsLoading(false);
-    }, 800);
-    
-    return () => clearTimeout(timer);
+    }, 500);
   }, []);
 
   return (
@@ -74,15 +71,12 @@ function HomePage() {
               </div>
             </div>
           )}
-          
           {/* Posts Feed */}
           <div className="space-y-4">
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-xl font-semibold text-gray-800">Recent Updates</h2>
             </div>
-            
             {isLoading ? (
-              // Loading skeleton for posts
               Array(3).fill(0).map((_, i) => (
                 <div key={i} className="bg-white rounded-lg border border-gray-100 shadow-sm p-4 animate-pulse">
                   <div className="flex items-center mb-3">
@@ -106,7 +100,6 @@ function HomePage() {
             )}
           </div>
         </div>
-        
         {/* Sidebar */}
         <div className="lg:col-span-1 space-y-6">
           {/* Events Section */}
@@ -122,10 +115,8 @@ function HomePage() {
                 </Link>
               </div>
             </div>
-            
             <div className="divide-y divide-gray-100">
               {isLoading ? (
-                // Loading skeleton for events
                 Array(3).fill(0).map((_, i) => (
                   <div key={i} className="p-4 animate-pulse">
                     <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
@@ -160,7 +151,6 @@ function HomePage() {
               )}
             </div>
           </div>
-          
           {/* Top Colleges */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
             <div className="p-4 border-b border-gray-100">
@@ -174,10 +164,8 @@ function HomePage() {
                 </Link>
               </div>
             </div>
-            
             <div className="divide-y divide-gray-100">
               {isLoading ? (
-                // Loading skeleton for colleges
                 Array(5).fill(0).map((_, i) => (
                   <div key={i} className="p-4 flex items-center animate-pulse">
                     <div className="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
@@ -208,7 +196,6 @@ function HomePage() {
               )}
             </div>
           </div>
-          
           {/* Find People */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
             <div className="p-4">

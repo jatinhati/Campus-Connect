@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import LoadingScreen from './components/common/LoadingScreen';
 import { AuthProvider } from './contexts/AuthContext';
-
+import SearchResultsPage from "./pages/SearchResultsPage";
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const LoginPage = lazy(() => import('./pages/auth/LoginPage'));
@@ -30,8 +30,10 @@ function App() {
             <Route path="events" element={<EventsPage />} />
             <Route path="events/:id" element={<EventDetailPage />} />
             <Route path="directory" element={<DirectoryPage />} />
+            {/* Removed: <Route path="/directory/college/:id" element={<CollegeProfilePage />} /> */}
             <Route path="chat" element={<ChatPage />} />
             <Route path="chat/:id" element={<ChatPage />} />
+            <Route path="/search" element={<SearchResultsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
