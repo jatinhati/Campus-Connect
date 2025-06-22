@@ -1,11 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useAuth } from '../../contexts/AuthContext';
 import LoadingScreen from '../common/LoadingScreen';
+import MessageCircle from '../chat/MessageCircle';
 
 function Layout() {
-  const { isLoading } = useAuth();
+  const { isLoading, isAuthenticated } = useAuth();
+  const location = useLocation();
+  
+  // Check if current path is a chat page
+  const isChatPage = location.pathname.startsWith('/chat');
 
   // Show loading screen while auth is being checked
   if (isLoading) {
@@ -18,7 +23,8 @@ function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer />
+      {!isChatPage && <Footer />}
+      {isAuthenticated && <MessageCircle />}
     </div>
   );
 }

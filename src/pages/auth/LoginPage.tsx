@@ -158,7 +158,7 @@ function LoginPage() {
           {/* Demo credentials hint */}
           <div className="mt-6 text-center">
             <p className="text-xs text-gray-500">
-              Demo credentials: <span className="font-medium">rahul@example.com</span> / <span className="font-medium">password123</span> (student) or <span className="font-medium">coding@iitd.ac.in</span> / <span className="font-medium">password123</span> (club)
+              Demo credentials: <span className="font-medium">jatin@gmail.com</span> / <span className="font-medium">123</span> (student) or <span className="font-medium">coding@iitd.ac.in</span> / <span className="font-medium">password123</span> (club)
             </p>
           </div>
         </div>

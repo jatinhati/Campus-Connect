@@ -22,4 +22,5 @@ export interface Event {
   attendees: number;
   type: 'hackathon' | 'cultural' | 'workshop' | 'seminar';
   dateObj: EventDateObj;
+  isRegistered?: boolean;
 }

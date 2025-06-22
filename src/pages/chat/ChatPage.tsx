@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { Search, Send, Paperclip, Info, Phone, Video, MoreVertical, User } from 'lucide-react';
+import { Search, Send, Paperclip, Info, Phone, Video, MoreVertical, User, MessageCircle } from 'lucide-react';
 import { format } from 'date-fns';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -361,7 +361,7 @@ function ChatPage() {
                   <div className="h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-gray-300 mb-2">
-                        <MessageCircle size={48} className="mx-auto" />
+                        <Send size={48} className="mx-auto" />
                       </div>
                       <p className="text-sm text-gray-500">No messages yet</p>
                       <p className="text-xs text-gray-400">Send a message to start a conversation</p>

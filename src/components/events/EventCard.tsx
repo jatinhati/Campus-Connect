@@ -1,12 +1,40 @@
 import { Calendar, MapPin, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Event } from '../../types/event';
+import { useState } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface EventCardProps {
   event: Event;
+  onRegister?: (eventId: string) => Promise<void>;
 }
 
-function EventCard({ event }: EventCardProps) {
+function EventCard({ event, onRegister }: EventCardProps) {
+  const { isAuthenticated } = useAuth();
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(event.isRegistered || false);
+
+  const handleRegister = async () => {
+    if (!isAuthenticated) {
+      // Redirect to login page or show login modal
+      window.location.href = '/login';
+      return;
+    }
+
+    if (!onRegister) return;
+
+    setIsRegistering(true);
+    try {
+      await onRegister(event.id);
+      setIsRegistered(true);
+    } catch (error) {
+      console.error('Error registering for event:', error);
+      // You would typically show an error message to the user here
+    } finally {
+      setIsRegistering(false);
+    }
+  };
+
   return (
     <div className="card group hover:shadow-md hover:-translate-y-1 transition-all duration-300">
       {/* Event Image */}
@@ -76,12 +104,19 @@ function EventCard({ event }: EventCardProps) {
           </div>
           
           {/* Register Button */}
-          <Link 
-            to={`/events/${event.id}`} 
-            className="btn-primary btn-sm"
+          <button
+            onClick={handleRegister}
+            disabled={isRegistering || isRegistered}
+            className={`btn-sm ${
+              isRegistered 
+                ? 'btn-success cursor-default' 
+                : isRegistering 
+                  ? 'btn-primary opacity-50 cursor-not-allowed'
+                  : 'btn-primary'
+            }`}
           >
-            Register
-          </Link>
+            {isRegistered ? 'Registered' : isRegistering ? 'Registering...' : 'Register'}
+          </button>
         </div>
       </div>
     </div>
