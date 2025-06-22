@@ -35,8 +35,8 @@ const MOCK_USERS: MockUser[] = [
   {
     id: '1',
     name: 'Rahul Sharma',
-    email: 'rahul@example.com',
-    password: 'password123', // In a real app, this would be hashed
+    email: 'jatin@gmail.com',
+    password: '123', // In a real app, this would be hashed
     avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150',
     role: 'student' as UserRole,
     college: 'IIT Delhi',
@@ -61,9 +61,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Check if user is logged in on component mount
   useEffect(() => {
+    console.log('AuthProvider: Checking authentication state');
     const storedUser = localStorage.getItem('campusConnectUser');
     if (storedUser) {
+      console.log('AuthProvider: Found stored user', storedUser);
       setUser(JSON.parse(storedUser));
+    } else {
+      console.log('AuthProvider: No stored user found');
     }
     setIsLoading(false);
   }, []);
